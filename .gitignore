@@ -12,9 +12,13 @@ App\ Build
 /Assets/FPS\ Kit\ By\ (HDGameP)/*
 /Assets/Helicopter/*
 /Assets/Military1/*
+/Assets/Plugins/*
 /Assets/Particle\ System/*
 /Assets/PreFabs/*
 /Assets/Scenes/*
+/Assets/EffectExamples/*
+/Assets/flag/*
+/Assets/Desert\ Enviornment/*
 /Assets/Sentinel\ FPS\ GUI/*
 /Assets/Standard\ Assets/*
 /Assets/Textures\ and\ Sprites/*
@@ -27,6 +31,16 @@ App\ Build
 /Assets/genSWAT/*
 /Assets/Grenades_Ammo_FPS/*
 /Assets/Materials/*
+/Assets/Loading\ Screen/*
+/Assets/RDL/*
+/Assets/SSAO\ Pro/*
+/Assets/FPS\ Voice\ Pack/*
+/Assets/HeroSelectionAssets/*
+/Assets/UGUIMinimap/*
+
+
+/Assets/Profilers/*
+
 Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
