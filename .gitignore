@@ -5,6 +5,7 @@
 [Bb]uilds/
 App\ Build
 /UnityPackageManager/*
+/ProjectSettings/*
 /Assets/3D\ Models/*
 /Assets/2DLightAsset/*
 /Assets/EffectExamples/*
