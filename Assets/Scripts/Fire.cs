@@ -27,6 +27,9 @@ public class Fire : MonoBehaviour {
 	public float MaxBulletsSpreadAngle = 3.0f;
 	public float TimeTillMaxSpreadAngle = 1.0f;
 
+	// Assign Bullet Shell for eject
+	public GameObject Shell_Eject_Transform;
+
 	// Use this for initialization
 	void Start () {
 		GD = transform.GetComponent<GunData> ();
@@ -49,6 +52,8 @@ public class Fire : MonoBehaviour {
 					if (FireGunAnim.isreloading == true)
 						return;
 					if (FireGunAnim.isreloading != true) {
+						GameObject clone = Instantiate (Resources.Load("ShellCasing") as GameObject, Shell_Eject_Transform.transform.position,Shell_Eject_Transform.transform.rotation);
+						clone.GetComponent<Rigidbody>().velocity = transform.TransformDirection (Vector3.right * 5);
 						GD.DecreaseBullet ();
 						GetComponent<PhotonView> ().RPC ("ActiveMuzzleFlashNetwork", PhotonTargets.All);
 						DoFire ();
