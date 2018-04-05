@@ -53,25 +53,6 @@ public class FPSm16Controller : MonoBehaviour {
 			anim.Play ("inspect");
 		}
 
-		if (Input.GetKey (KeyCode.LeftShift) && Input.GetKey (KeyCode.W)) {
-			anim.SetFloat ("Run",0.2f);
-		}
-
-		if (Input.GetMouseButtonDown (1)) {
-			if (zoom == 0) {
-				zoom++;
-				anim.SetBool ("Zoom", true);
-			} else if (zoom != 0) {
-				zoom--;
-				anim.SetBool ("Zoom", false);
-			}
-		}
-
-//		if ((Input.GetKey (KeyCode.W) && Input.GetKey (KeyCode.LeftShift))) {
-//			anim.SetFloat ("Walk",Input.GetAxis("Vertical"));
-//			anim.SetFloat ("Run", 1);
-//		}
-
 		else if (!isreloading) {
 			anim.SetFloat ("Run", 0);
 			anim.SetFloat ("Walk", Input.GetAxis ("Vertical"));

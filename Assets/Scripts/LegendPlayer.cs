@@ -10,6 +10,10 @@ public class LegendPlayer : MonoBehaviour {
 	ScoreCounterForNetwork Score;
 	NetworkManager NM;
 
+	//Wait For Animation To End
+	float timer = 0.0f;
+	float timerMax = 5.0f;
+
 	void Start () {
 		Score = GetComponent<ScoreCounterForNetwork> ();	
 		NM = GameObject.FindObjectOfType<NetworkManager>();
@@ -21,7 +25,14 @@ public class LegendPlayer : MonoBehaviour {
 			NM.LegendTrue = true;
 		}
 
-		WaitForFiveSecs ();
+		if (timer < timerMax) {
+			if (CheckIFLegend()) {
+				timer += Time.deltaTime;
+			}
+		}
+		else if (timer > timerMax) {
+			NM.LegendTrue = false;
+		}
 	}
 
 	bool CheckIFLegend(){
