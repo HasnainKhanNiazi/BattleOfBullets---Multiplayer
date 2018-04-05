@@ -33,7 +33,6 @@ public class HeroSelectForward : MonoBehaviour {
 		source.clip = Resources.Load ("Sounds/IN game Sounds/ambience") as AudioClip;
 		source.Play ();
 		int RandomForImage = Random.Range (1,7);
-		Debug.Log ("Random is "+ RandomForImage);
 		LoadingUI.GetComponent<Image> ().overrideSprite = Resources.Load<Sprite> ("Pictures/"+RandomForImage+"");
 		MapName.text = MapChooseButtons.SelectedMap;
 		LoadingUI.SetActive (true);

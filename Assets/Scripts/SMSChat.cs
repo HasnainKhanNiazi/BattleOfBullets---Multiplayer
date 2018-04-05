@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ExitGames.Client.Photon.Chat;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class SMSChat : MonoBehaviour,IChatClientListener {
 	
@@ -41,12 +42,16 @@ public class SMSChat : MonoBehaviour,IChatClientListener {
 		if (Input.GetKeyDown (KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
 			
 			if (i == 0) {
+				GameObject.FindObjectOfType<PlayerMovement> ().enabled = false;
+				GameObject.FindObjectOfType<FirstPersonController> ().enabled = false;
 				ShowWritePanel.SetActive (true);
 				WrittenSMS.text = "";
 				WriteSMSPanel.ActivateInputField ();
 				i++;
 			}
 			else {
+				GameObject.FindObjectOfType<PlayerMovement> ().enabled = true;
+				GameObject.FindObjectOfType<FirstPersonController> ().enabled = true;
 				Chat_Client.PublishMessage ("global",WrittenSMS.text);
 				ShowWritePanel.SetActive (false);
 				i = 0;
