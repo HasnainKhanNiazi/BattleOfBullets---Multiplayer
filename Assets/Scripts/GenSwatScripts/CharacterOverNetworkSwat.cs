@@ -38,7 +38,7 @@ public class CharacterOverNetworkSwat : Photon.MonoBehaviour {
 		}
 	}
 
-	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info){
+	/*void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info){
 		if (stream.isWriting) {
 			//this is our player we need to send current position to the netwrok
 			stream.SendNext(transform.position);
@@ -57,5 +57,5 @@ public class CharacterOverNetworkSwat : Photon.MonoBehaviour {
 			Rotation = (Quaternion) stream.ReceiveNext();
 
 		}
-	}
+	}*/
 }
